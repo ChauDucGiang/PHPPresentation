@@ -270,7 +270,9 @@ abstract class AbstractDecoratorWriter extends \PhpOffice\PhpPresentation\Writer
 
         // a:ln
         $objWriter->startElement('a:ln');
-        $objWriter->writeAttribute('w', $width);
+
+        //ignore width line
+        //$objWriter->writeAttribute('w', $width);
 
         // Fill
         $this->writeFill($objWriter, $oOutline->getFill());

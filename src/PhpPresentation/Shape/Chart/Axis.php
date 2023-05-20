@@ -118,6 +118,11 @@ class Axis implements ComparableInterface
      * @var bool
      */
     protected $isVisible = true;
+    
+    /**
+     * @var null
+     */
+    protected $schemeColor = null;
 
     /**
      * Create a new \PhpOffice\PhpPresentation\Shape\Chart\Axis instance.
@@ -486,6 +491,28 @@ class Axis implements ComparableInterface
         ])) {
             $this->tickLabelPosition = $value;
         }
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getSchemeColor(): ?string
+    {
+        return $this->schemeColor;
+    }
+
+    /**
+     * Set Title.
+     *
+     * @param string $value
+     *
+     * @return self
+     */
+    public function setSchemeColor(string $value = null): self
+    {
+        $this->schemeColor = $value;
 
         return $this;
     }

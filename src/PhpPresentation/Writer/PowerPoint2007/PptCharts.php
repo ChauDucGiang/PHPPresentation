@@ -2470,26 +2470,27 @@ class PptCharts extends AbstractDecoratorWriter
         $this->writeOutline($objWriter, $oAxis->getOutline());
         // ##c:spPr
         $objWriter->endElement();
+        // Axis Lable
+        $objWriter->startElement('c:txPr');
+        $objWriter->writeElement('a:bodyPr', null);
+        $objWriter->writeElement('a:lstStyle', null);
+        $objWriter->startElement('a:p');
+        $objWriter->startElement('a:pPr');
+        $objWriter->startElement('a:defRPr');
+        $objWriter->writeAttribute('sz', $oAxis->getFont()->getSize() * 100);
+
         if ($oAxis->getSchemeColor()) {
-            // Axis Lable
-            $objWriter->startElement('c:txPr');
-            $objWriter->writeElement('a:bodyPr', null);
-            $objWriter->writeElement('a:lstStyle', null);
-            $objWriter->startElement('a:p');
-            $objWriter->startElement('a:pPr');
-            $objWriter->startElement('a:defRPr');
-            $objWriter->writeAttribute('sz', $oAxis->getFont()->getSize() * 100);
             $objWriter->startElement('a:solidFill');
             $objWriter->startElement('a:schemeClr');
-//        $objWriter->writeAttribute('val', 'bg1');
             $objWriter->writeAttribute('val', $oAxis->getSchemeColor());
             $objWriter->endElement();
             $objWriter->endElement();
-            $objWriter->endElement();
-            $objWriter->endElement();
-            $objWriter->endElement();
-            $objWriter->endElement();
         }
+
+        $objWriter->endElement();
+        $objWriter->endElement();
+        $objWriter->endElement();
+        $objWriter->endElement();
 
         // c:crossAx
         $objWriter->startElement('c:crossAx');

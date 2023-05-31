@@ -56,7 +56,7 @@ class Font implements ComparableInterface
      *
      * @var string
      */
-    private $name = 'Calibri';
+    private $name = '游ゴシック';
 
     /**
      * Font Size.

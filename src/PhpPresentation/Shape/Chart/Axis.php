@@ -55,7 +55,7 @@ class Axis implements ComparableInterface
      *
      * @var string
      */
-    private $formatCode = '';
+    private $formatCode = 'General';
 
     /**
      * Font.
